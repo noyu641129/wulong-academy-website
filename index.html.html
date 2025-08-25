@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>救救烏龍院計畫｜捐款認養 × 護理師紓壓 × 手作精油回饋</title>
+    <meta name="description" content="救救烏龍院計畫串連社會善意，捐款認養澳洲茶樹，邀護理師到農場紓壓並親手蒸餾精油。透明公開、可開收據，現在就種下一株安心。">
+    <meta name="keywords" content="護理師紓壓、慈善捐款、認養茶樹、澳洲茶樹精油、身心靈、志工參訪、ESG、救救烏龍院">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="救救烏龍院計畫｜捐款認養 × 護理師紓壓 × 手作精油回饋">
+    <meta property="og:description" content="救救烏龍院計畫串連社會善意，捐款認養澳洲茶樹，邀護理師到農場紓壓並親手蒸餾精油。透明公開、可開收據，現在就種下一株安心。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --eucalyptus-green: #6BA58A;
+            --tea-tree-white: #F7FAF8;
+            --wood-brown: #8B6F47;
+            --ocean-blue: #235A6C;
+            --warm-gold: #C9A227;
+        }
+        
+        * {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        
+        .bg-eucalyptus { background-color: var(--eucalyptus-green); }
+        .bg-teatree { background-color: var(--tea-tree-white); }
+        .bg-wood { background-color: var(--wood-brown); }
+        .bg-ocean { background-color: var(--ocean-blue); }
+        .bg-gold { background-color: var(--warm-gold); }
+        
+        .text-eucalyptus { color: var(--eucalyptus-green); }
+        .text-wood { color: var(--wood-brown); }
+        .text-ocean { color: var(--ocean-blue); }
+        .text-gold { color: var(--warm-gold); }
+        
+        .border-eucalyptus { border-color: var(--eucalyptus-green); }
+        .border-wood { border-color: var(--wood-brown); }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--tea-tree-white) 0%, var(--eucalyptus-green) 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(107, 165, 138, 0.1), 0 2px 4px -1px rgba(107, 165, 138, 0.06);
+        }
+        
+        .btn-primary {
+            background-color: var(--warm-gold);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #B8911F;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--eucalyptus-green);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5A8E72;
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+        
+        .counter-animation {
+            animation: countUp 2s ease-out;
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* PDF optimization */
+         {
+            .floating-btn { display: none; }
+            .fixed { position: static; }
+            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-teatree smooth-scroll">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-leaf text-eucalyptus text-2xl"></i>
+                <span class="text-xl font-semibold text-ocean">救救烏龍院計畫</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-6 text-sm">
+                <a href="#about" class="text-ocean hover:text-eucalyptus transition-colors">關於計畫</a>
+                <a href="#donate" class="text-ocean hover:text-eucalyptus transition-colors">認養與捐款</a>
+                <a href="#process" class="text-ocean hover:text-eucalyptus transition-colors">活動流程</a>
+                <a href="#testimonials" class="text-ocean hover:text-eucalyptus transition-colors">見證分享</a>
+                <a href="#faq" class="text-ocean hover:text-eucalyptus transition-colors">常見問題</a>
+                <a href="#contact" class="text-ocean hover:text-eucalyptus transition-colors">聯絡我們</a>
+            </div>
+            
+            <button class="btn-primary text-white px-6 py-2 rounded-full text-sm font-medium">
+                立即捐款
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-20 pb-16 px-4">
+        <div class="container mx-auto text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold text-ocean mb-6">
+                    一起種下安心，蒸餾出支持
+                </h1>
+                <p class="text-lg md:text-xl text-wood mb-8 leading-relaxed">
+                    捐款認養澳洲茶樹，邀請高壓護理師到農場紓壓，親手製作精油，為身心靈按下重啟鍵。
+                </p>
+                
+                <!-- Counter -->
+                <div class="bg-white rounded-lg p-6 mb-8 card-shadow counter-animation">
+                    <div class="text-2xl font-bold text-eucalyptus mb-2">
+                        <span id="counter">1,247</span>
+                    </div>
+                    <div class="text-wood">位護理師已獲得支持</div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold">
+                        <i class="fas fa-heart mr-2"></i>立即捐款
+                    </button>
+                    <button class="btn-secondary text-white px-8 py-4 rounded-full text-lg font-medium">
+                        <i class="fas fa-calendar-alt mr-2"></i>報名參訪
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section id="about" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-ocean mb-12">為什麼需要救救烏龍院計畫？</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg card-shadow">
+                    <i class="fas fa-user-md text-4xl text-eucalyptus mb-4"></i>
+                    <h3 class="text-xl font-semibold text-ocean mb-3">護理師高壓倦怠</h3>
+                    <p class="text-wood">長期工作壓力導致身心俱疲，需要專業的紓壓支持與關懷。</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg card-shadow">
+                    <i class="fas fa-leaf text-4xl text-eucalyptus mb-4"></i>
+                    <h3 class="text-xl font-semibold text-ocean mb-3">農場自然療癒</h3>
+                    <p class="text-wood">大自然環境提供最好的療癒空間，讓身心回歸平靜。</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg card-shadow">
+                    <i class="fas fa-hands text-4xl text-eucalyptus mb-4"></i>
+                    <h3 class="text-xl font-semibold text-ocean mb-3">手作蒸餾成就感</h3>
+                    <p class="text-wood">親手製作精油的過程帶來滿足感與療癒效果。</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg card-shadow">
+                    <i class="fas fa-gift text-4xl text-eucalyptus mb-4"></i>
+                    <h3 class="text-xl font-semibold text-ocean mb-3">精油回饋支持</h3>
+                    <p class="text-wood">將製作的精油回饋給護理師社群，延續關懷力量。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="bg-white py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-ocean mb-12">計畫怎麼運作？</h2>
+            <div class="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto">
+                <div class="text-center mb-8 lg:mb-0 flex-1">
+                    <div class="w-16 h-16 bg-eucalyptus text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <h3 class="text-lg font-semibold text-ocean mb-2">社會大眾捐款認養</h3>
+                    <p class="text-wood text-sm">民眾透過網站捐款認養澳洲茶樹苗</p>
+                </div>
+                <i class="fas fa-arrow-right text-eucalyptus text-2xl hidden lg:block mx-4"></i>
+                <div class="text-center mb-8 lg:mb-0 flex-1">
+                    <div class="w-16 h-16 bg-eucalyptus text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <h3 class="text-lg font-semibold text-ocean mb-2">茶樹栽植與照護</h3>
+                    <p class="text-wood text-sm">專業農場團隊負責栽種與日常維護</p>
+                </div>
+                <i class="fas fa-arrow-right text-eucalyptus text-2xl hidden lg:block mx-4"></i>
+                <div class="text-center mb-8 lg:mb-0 flex-1">
+                    <div class="w-16 h-16 bg-eucalyptus text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <h3 class="text-lg font-semibold text-ocean mb-2">護理師紓壓蒸餾</h3>
+                    <p class="text-wood text-sm">邀請護理師到農場體驗蒸餾製作</p>
+                </div>
+                <i class="fas fa-arrow-right text-eucalyptus text-2xl hidden lg:block mx-4"></i>
+                <div class="text-center flex-1">
+                    <div class="w-16 h-16 bg-eucalyptus text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                    <h3 class="text-lg font-semibold text-ocean mb-2">精油包裝捐贈</h3>
+                    <p class="text-wood text-sm">將精油回饋給護理師社群使用</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Plans -->
+    <section id="donate" class="py-16 px-4 bg-teatree">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-ocean mb-12">認養與捐款方案</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Plan 1 -->
+                <div class="bg-white rounded-lg p-6 card-shadow text-center relative">
+                    <div class="text-lg font-semibold text-ocean mb-2">育苗夥伴</div>
+                    <div class="text-3xl font-bold text-eucalyptus mb-4">NT$500</div>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-wood">
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>種下 1 株茶樹</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>電子感謝卡</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>計畫月報</li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg text-sm font-medium">立即捐款</button>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="bg-white rounded-lg p-6 card-shadow text-center relative">
+                    <div class="text-lg font-semibold text-ocean mb-2">安心樹友</div>
+                    <div class="text-3xl font-bold text-eucalyptus mb-4">NT$1,000</div>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-wood">
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>種下 2 株茶樹</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>安心月報電子報</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>電子參訪指南</li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg text-sm font-medium">立即捐款</button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-white rounded-lg p-6 card-shadow text-center relative border-2 border-eucalyptus">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-eucalyptus text-white px-3 py-1 rounded-full text-xs">推薦</span>
+                    </div>
+                    <div class="text-lg font-semibold text-ocean mb-2">療癒同路人</div>
+                    <div class="text-3xl font-bold text-eucalyptus mb-4">NT$3,000</div>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-wood">
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>種下 5 株茶樹</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>姓名上牆（可匿名）</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>年度參訪名額 1 位</li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg text-sm font-medium">立即捐款</button>
+                </div>
+
+                <!-- Plan 4 -->
+                <div class="bg-white rounded-lg p-6 card-shadow text-center relative">
+                    <div class="text-lg font-semibold text-ocean mb-2">守護天使</div>
+                    <div class="text-3xl font-bold text-eucalyptus mb-4">NT$10,000</div>
+                    <ul class="text-left space-y-2 mb-6 text-sm text-wood">
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>種下 15 株茶樹</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>專屬參訪 2 位</li>
+                        <li><i class="fas fa-check text-eucalyptus mr-2"></i>年度精油小禮（限量）</li>
+                    </ul>
+                    <button class="btn-primary text-white w-full py-2 rounded-lg text-sm font-medium">立即捐款</button>
+                </div>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="mt-12 text-center">
+                <h3 class="text-xl font-semibold text-ocean mb-6">支付方式</h3>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="bg-white border border-eucalyptus px-4 py-2 rounded-lg text-ocean text-sm hover:bg-eucalyptus hover:text-white transition-colors">
+                        <i class="fas fa-credit-card mr-2"></i>信用卡
+                    </button>
+                    <button class="bg-white border border-eucalyptus px-4 py-2 rounded-lg text-ocean text-sm hover:bg-eucalyptus hover:text-white transition-colors">
+                        <i class="fas fa-university mr-2"></i>銀行轉帳
+                    </button>
+                    <button class="bg-white border border-eucalyptus px-4 py-2 rounded-lg text-ocean text-sm hover:bg-eucalyptus hover:text-white transition-colors">
+                        <i class="fas fa-mobile-alt mr-2"></i>行動支付
+                    </button>
+                    <button class="bg-white border border-eucalyptus px-4 py-2 rounded-lg text-ocean text-sm hover:bg-eucalyptus hover:text-white transition-colors">
+                        <i class="fas fa-handshake mr-2"></i>企業合作
+                    </button>
+                </div>
+                <p class="text-wood text-sm">可開立捐款收據，企業捐款歡迎來信洽談 ESG 合作方案</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Visit Schedule -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-ocean mb-12">到農場的一天（參訪行程）</h2>
+            <div class="space-y-4">
+                <div class="flex items-center p-4 bg-teatree rounded-lg">
+                    <div class="w-20 text-eucalyptus font-semibold text-sm">10:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-ocean">抵達與暖身</h3>
+                        <p class="text-wood text-sm">農場導覽、安全說明、暖身活動</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-teatree rounded-lg">
+                    <div class="w-20 text-eucalyptus font-semibold text-sm">10:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-ocean">茶樹步行冥想</h3>
+                        <p class="text-wood text-sm">在茶樹林間緩慢行走，感受自然療癒力量</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-teatree rounded-lg">
+                    <div class="w-20 text-eucalyptus font-semibold text-sm">11:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-ocean">蒸餾體驗</h3>
+                        <p class="text-wood text-sm">親手採集茶樹葉，學習蒸餾技術製作精油</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-teatree rounded-lg">
+                    <div class="w-20 text-eucalyptus font-semibold text-sm">12:30</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-ocean">田間野餐</h3>
+                        <p class="text-wood text-sm">享用有機蔬食便當，與同伴分享心得</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-teatree rounded-lg">
+                    <div class="w-20 text-eucalyptus font-semibold text-sm">14:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-ocean">芳香伸展</h3>
+                        <p class="text-wood text-sm">使用精油進行放鬆伸展與按摩</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-teatree rounded-lg">
+                    <div class="w-20 text-eucalyptus font-semibold text-sm">15:00</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-ocean">收心分享與返程</h3>
+                        <p class="text-wood text-sm">分享體驗心得，帶著精油與滿滿收穫返程</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <h4 class="font-semibold text-ocean mb-2">注意事項</h4>
+                <ul class="text-wood text-sm space-y-1">
+                    <li>• 請穿著舒適衣著及防滑鞋履</li>
+                    <li>• 請準備防曬用品並多補充水分</li>
+                    <li>• 可自備環保杯具，實踐永續理念</li>
+                    <li>• 活動全程提供保險保障</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 px-4 bg-teatree">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-ocean mb-12">真實見證分享</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-lg card-shadow text-center">
+                    <div class="w-16 h-16 bg-eucalyptus rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user text-white text-xl"></i>
+                    </div>
+                    <p class="text-wood italic mb-4">"在葉香升起的那一刻，我的肩膀真的放鬆了。這是我很久沒有感受到的平靜。"</p>
+                    <div class="text-ocean font-semibold">加護病房護理師 小雅</div>
+                    <div class="text-eucalyptus text-sm">參與時間：2024年3月</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg card-shadow text-center">
+                    <div class="w-16 h-16 bg-eucalyptus rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user text-white text-xl"></i>
+                    </div>
+                    <p class="text-wood italic mb-4">"第一次覺得自己值得被照顧，謝謝大家的用心。我會帶著這份溫暖繼續照顧病人。"</p>
+                    <div class="text-ocean font-semibold">急診護理師 小明</div>
+                    <div class="text-eucalyptus text-sm">參與時間：2024年4月</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg card-shadow text-center">
+                    <div class="w-16 h-16 bg-eucalyptus rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user text-white text-xl"></i>
+                    </div>
+                    <p class="text-wood italic mb-4">"我把那瓶精油放在值班櫃，每次累了就聞一下，彷彿又回到那個陽光滿滿的農場。"</p>
+                    <div class="text-ocean font-semibold">病房護理師 小華</div>
+                    <div class="text-eucalyptus text-sm">參與時間：2024年5月</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-ocean mb-12">農場生活影像</h2>
+            <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <div class="bg-eucalyptus h-64 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-seedling text-white text-4xl"></i>
+                    <div class="text-white ml-4">
+                        <div class="font-semibold">茶樹農場</div>
+                        <div class="text-sm opacity-80">綠意盎然的療癒空間</div>
+                    </div>
+                </div>
+                <div class="bg-wood h-64 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-flask text-white text-4xl"></i>
+                    <div class="text-white ml-4">
+                        <div class="font-semibold">蒸餾器具</div>
+                        <div class="text-sm opacity-80">專業安全的蒸餾設備</div>
+                    </div>
+                </div>
+                <div class="bg-ocean h-64 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-smile text-white text-4xl"></i>
+                    <div class="text-white ml-4">
+                        <div class="font-semibold">護理師活動</div>
+                        <div class="text-sm opacity-80">歡樂的手作蒸餾時光</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 px-4 bg-teatree">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-ocean mb-12">常見問題</h2>
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-lg card-shadow">
+                    <div class="p-6 cursor-pointer flex justify-between items-center" onclick="toggleFaq(0)">
+                        <h3 class="font-semibold text-ocean">捐款如何使用？</h3>
+                        <i class="fas fa-chevron-down text-eucalyptus transform transition-transform"></i>
+                    </div>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-wood">主要用於茶樹育苗與農事維護、護理師參訪與蒸餾材料、精油瓶材與保險、行政與公開報告。每月都會公布詳細的收支摘要。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg card-shadow">
+                    <div class="p-6 cursor-pointer flex justify-between items-center" onclick="toggleFaq(1)">
+                        <h3 class="font-semibold text-ocean">可以指定匿名或不公開姓名嗎？</h3>
+                        <i class="fas fa-chevron-down text-eucalyptus transform transition-transform"></i>
+                    </div>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-wood">可以的，在捐款表單中可以勾選匿名選項，我們會完全尊重您的隱私。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg card-shadow">
+                    <div class="p-6 cursor-pointer flex justify-between items-center" onclick="toggleFaq(2)">
+                        <h3 class="font-semibold text-ocean">參訪是否需要護理師證件？</h3>
+                        <i class="fas fa-chevron-down text-eucalyptus transform transition-transform"></i>
+                    </div>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-wood">護理師名額會優先保留，活動當日會進行簡易的身份核對即可，不需要繁複的證明文件。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg card-shadow">
+                    <div class="p-6 cursor-pointer flex justify-between items-center" onclick="toggleFaq(3)">
+                        <h3 class="font-semibold text-ocean">沒空參訪也能支持嗎？</h3>
+                        <i class="fas fa-chevron-down text-eucalyptus transform transition-transform"></i>
+                    </div>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-wood">當然可以！您的捐款將轉為育苗與精油捐贈，同樣能支持到護理師們，並會定期收到計畫進度報告。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg card-shadow">
+                    <div class="p-6 cursor-pointer flex justify-between items-center" onclick="toggleFaq(4)">
+                        <h3 class="font-semibold text-ocean">會拿到多少精油？</h3>
+                        <i class="fas fa-chevron-down text-eucalyptus transform transition-transform"></i>
+                    </div>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-wood">會依據當日原料與蒸餾情況進行調整，並以公平分配為原則，通常每位參與者可獲得 10-15ml 的精油。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg card-shadow">
+                    <div class="p-6 cursor-pointer flex justify-between items-center" onclick="toggleFaq(5)">
+                        <h3 class="font-semibold text-ocean">可否開立公司捐款收據？</h3>
+                        <i class="fas fa-chevron-down text-eucalyptus transform transition-transform"></i>
+                    </div>
+                    <div class="faq-content px-6 pb-6">
+                        <p class="text-wood">可以的，請在表單中填寫公司抬頭與統一編號，我們會開立正式捐款收據供報稅使用。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 px-4 bg-eucalyptus">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">現在就種下一株安心樹</h2>
+            <p class="text-white text-lg mb-8 max-w-2xl mx-auto">
+                每一次捐款都是對護理師最直接的支持，每一株茶樹都承載著社會的關愛與感謝。
+                讓我們一起為第一線的醫護英雄種下希望，蒸餾出滿滿的支持力量。
+            </p>
+            <button class="btn-primary text-white px-10 py-4 rounded-full text-xl font-bold">
+                <i class="fas fa-heart mr-2"></i>立即捐款支持
+            </button>
+        </div>
+    </section>
+
+    <!-- About Organization -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-2xl font-bold text-ocean mb-6">關於救救烏龍院計畫</h2>
+            <p class="text-wood leading-relaxed mb-8">
+                我們致力連結社會善意與第一線護理師的身心健康支持。透過「救救烏龍院計畫」，每一筆捐款都將化為一株會長大的安心，陪護理師在自然中重啟、並親手蒸餾出屬於自己的療癒香氣。
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <i class="fas fa-seedling text-3xl text-eucalyptus mb-4"></i>
+                    <h3 class="font-semibold text-ocean mb-2">把善意種下去</h3>
+                    <p class="text-wood text-sm">從一株茶樹，長成一整片支持</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-heart text-3xl text-eucalyptus mb-4"></i>
+                    <h3 class="font-semibold text-ocean mb-2">把壓力放下來</h3>
+                    <p class="text-wood text-sm">農場裡，一次深呼吸的練習</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-hands-helping text-3xl text-eucalyptus mb-4"></i>
+                    <h3 class="font-semibold text-ocean mb-2">把力量帶回去</h3>
+                    <p class="text-wood text-sm">一瓶親手蒸餾的精油，提醒自己值得被照顧</p>
+                </div>
+            </div>
+
+            <div class="bg-teatree p-6 rounded-lg">
+                <h3 class="font-semibold text-ocean mb-4">透明公開承諾</h3>
+                <p class="text-wood text-sm">
+                    每月公布收支摘要與影像紀錄，捐款可申請收據；企業合作歡迎來信，我們提供 ESG 參訪與志工日方案。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="bg-ocean py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 text-white">
+                <div>
+                    <h3 class="font-semibold mb-4 flex items-center">
+                        <i class="fas fa-leaf mr-2"></i>救救烏龍院計畫
+                    </h3>
+                    <p class="text-sm text-gray-300">
+                        串連社會善意，支持護理師身心健康，共同種下安心與希望。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">聯絡資訊</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <div><i class="fas fa-map-marker-alt mr-2"></i>高雄市○○區○○路123號</div>
+                        <div><i class="fas fa-phone mr-2"></i>(07) 1234-5678</div>
+                        <div><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="751c1b131a35061403100200191a1b125b1a0712">[email&#160;protected]</a></div>
+                        <div><i class="fab fa-line mr-2"></i>@savewulong</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">銀行資訊</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <div>戶名：救救烏龍院計畫專戶</div>
+                        <div>銀行：○○銀行 ○○分行</div>
+                        <div>帳號：1234-5678-9012</div>
+                        <div class="mt-2">
+                            <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
+                                <i class="fas fa-qrcode text-ocean text-xl"></i>
+                            </div>
+                            <div class="text-xs mt-1">行動支付 QR Code</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">快速連結</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="#" class="text-gray-300 hover:text-white block">收支報告下載</a>
+                        <a href="#" class="text-gray-300 hover:text-white block">年度報告</a>
+                        <a href="#" class="text-gray-300 hover:text-white block">隱私政策</a>
+                        <a href="#" class="text-gray-300 hover:text-white block">捐款收據說明</a>
+                    </div>
+                    <div class="mt-4 flex space-x-3">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-line text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-6 text-center">
+                <div class="text-sm text-gray-300 mb-4">
+                    <p>捐款收據與用途：可開立正式捐款收據供報稅使用，每月公開收支摘要</p>
+                    <p>隱私條款：表單個資僅供聯繫與開收據，不做商業轉售</p>
+                    <p>安全保障：蒸餾體驗有保險與安全指引，現場專人指導</p>
+                </div>
+                <p class="text-gray-400 text-sm">© 2024 救救烏龍院計畫 版權所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Button -->
+    <div class="floating-btn">
+        <button class="bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-colors">
+            <i class="fab fa-line text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Donation Form Modal (hidden by default) -->
+    <div id="donationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-ocean">捐款表單</h3>
+                <button onclick="closeDonationModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-ocean mb-1">捐款金額</label>
+                    <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-eucalyptus focus:outline-none" placeholder="請輸入金額">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-ocean mb-1">姓名/公司</label>
+                    <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-eucalyptus focus:outline-none" placeholder="請輸入姓名或公司名稱">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-ocean mb-1">Email</label>
+                    <input type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-eucalyptus focus:outline-none" placeholder="請輸入電子郵件">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-ocean mb-1">電話</label>
+                    <input type="tel" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-eucalyptus focus:outline-none" placeholder="請輸入聯絡電話">
+                </div>
+                <div>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="mr-2">
+                        <span class="text-sm text-ocean">需要捐款收據</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-ocean mb-1">留言（選填）</label>
+                    <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-eucalyptus focus:outline-none" rows="3" placeholder="感謝訊息或其他說明"></textarea>
+                </div>
+                <button type="submit" class="btn-primary text-white w-full py-3 rounded-lg font-semibold">
+                    確認捐款
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // FAQ Toggle Function
+        function toggleFaq(index) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const currentItem = faqItems[index];
+            const isActive = currentItem.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(item => {
+                item.classList.remove('active');
+                const icon = item.querySelector('i');
+                icon.style.transform = 'rotate(0deg)';
+            });
+            
+            // Open current item if it wasn't active
+            if (!isActive) {
+                currentItem.classList.add('active');
+                const icon = currentItem.querySelector('i');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Donation Modal Functions
+        function openDonationModal() {
+            document.getElementById('donationModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDonationModal() {
+            document.getElementById('donationModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Add click events to all donation buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const donationButtons = document.querySelectorAll('button:contains("立即捐款"), button:contains("確認捐款")');
+            donationButtons.forEach(button => {
+                if (button.textContent.includes('立即捐款')) {
+                    button.addEventListener('click', openDonationModal);
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Counter animation
+            const counter = document.getElementById('counter');
+            let count = 0;
+            const target = 1247;
+            const duration = 2000;
+            const step = target / (duration / 16);
+
+            function updateCounter() {
+                count += step;
+                if (count < target) {
+                    counter.textContent = Math.floor(count).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            }
+            updateCounter();
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('donationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDonationModal();
+            }
+        });
+
+        // Form submission tracking (for analytics)
+        document.querySelector('#donationModal form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the data to your server
+            // For now, we'll just show an alert
+            alert('感謝您的捐款！我們會儘快與您聯繫確認相關事宜。');
+            closeDonationModal();
+            
+            // Analytics tracking (placeholder)
+            // gtag('event', 'submit_donation', { 'event_category': 'donation' });
+        });
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"97490558ceca52ad","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDjaxdl3h0nQMffdf63hqWFLzSqDMbPMAR%2FTFN%2FMzILJkpihW2rMFjGfH%2FunAjDirzyP4OMHC%2Bd5uJFCp%2FGH23ob7j1dV4nbaFk0kWNoEhXJoxF7wOezRkm%2Ba5kDDuoauuXKvyVBBblc9v%2BQUZWOf2ThYaXRuvRzfYclFItrgEN64Q8Mrk%2FI%2FExRq1PfgQDLc3dhweyIsAlSKKz%2FZeRqzlPCTgg5Qea5rQNiQbeXHDAMu5J%2FxJ2TnUS18Sfdy2ySGh3AtCldcJiAdTOq485EArSh8dz%2FPFdj02apeQzBZ9B8%2B9PzHNz9YvxOx2OdLKPHEL%2BND2p%2FCnQ8QAYaEDrWOZ%2Fi9DiPPaUo8Gixi6e8l1FH2%2FnWy61J0D6Ay1L6LcBrtyjnXppy6LSHdesVvrciTgcZt0RpSxX1KwxiIetp%2FecaxL%2BvaNBsWSepkcjgptG3H7z00AYVBEsOzcqbGrZklsQK%2BaLMEgeEYI2Eg7vpLDxICPFtErurYzDB0MJnMnPj%2B0jcY8UZ1E7tC8S7M7jOzBQg%3D";
+        window.__genspark_locale = "zh-TW";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDjaxdl3h0nQMffdf63hqWFLzSqDMbPMAR/TFN/MzILJkpihW2rMFjGfH/unAjDirzyP4OMHC+d5uJFCp/GH23ob7j1dV4nbaFk0kWNoEhXJoxF7wOezRkm+a5kDDuoauuXKvyVBBblc9v+QUZWOf2ThYaXRuvRzfYclFItrgEN64Q8Mrk/I/ExRq1PfgQDLc3dhweyIsAlSKKz/ZeRqzlPCTgg5Qea5rQNiQbeXHDAMu5J/xJ2TnUS18Sfdy2ySGh3AtCldcJiAdTOq485EArSh8dz/PFdj02apeQzBZ9B8+9PzHNz9YvxOx2OdLKPHEL+ND2p/CnQ8QAYaEDrWOZ/i9DiPPaUo8Gixi6e8l1FH2/nWy61J0D6Ay1L6LcBrtyjnXppy6LSHdesVvrciTgcZt0RpSxX1KwxiIetp/ecaxL+vaNBsWSepkcjgptG3H7z00AYVBEsOzcqbGrZklsQK+aLMEgeEYI2Eg7vpLDxICPFtErurYzDB0MJnMnPj+0jcY8UZ1E7tC8S7M7jOzBQg=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
